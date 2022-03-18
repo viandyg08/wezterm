@@ -80,6 +80,9 @@ jobs:
       - name: "Install System Deps"
         shell: bash
         run: "env PATH=$PATH ./get-deps"
+      - name: install pkg-config-aarch64-linux-gnu
+        shell: bash
+        run: apt-get install -y pkg-config-aarch64-linux-gnu
       - name: "Build (Release mode)"
         shell: bash
         run: "cargo build --all --release --target aarch64-unknown-linux-gnu"
